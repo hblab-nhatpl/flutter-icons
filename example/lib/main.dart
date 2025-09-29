@@ -75,7 +75,8 @@ class _MyHomePageState extends State<MyHomePage> {
               Icon(WeatherIcons.wi_alien),
               Icon(WeatherIcons.wi_cloud),
               Icon(WeatherIcons.wi_day_rain),
-              Icon(FontAwesome7.zero)
+              Icon(FontAwesome7.zero),
+              FlutterIcon(FontAwesome7.apple)
             ],
           ),
         ),
