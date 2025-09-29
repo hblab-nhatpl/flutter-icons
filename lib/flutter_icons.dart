@@ -2,6 +2,7 @@ export 'src/ant_design.dart';
 export 'src/entypo.dart';
 export 'src/evil_icons.dart';
 export 'src/feather.dart';
+export 'src/flutter_icon.dart';
 export 'src/flutter_icons.dart';
 export 'src/font_awesome.dart';
 export 'src/font_awesome_5.dart';
