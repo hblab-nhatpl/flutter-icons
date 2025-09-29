@@ -5,6 +5,7 @@ import 'flutter_icon_data.dart';
 /// all Icons under FontAwesome
 ///
 /// http://fortawesome.github.io/Font-Awesome/icons/
+@staticIconProvider
 class FontAwesome {
   FontAwesome._();
 

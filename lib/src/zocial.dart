@@ -5,6 +5,7 @@ import 'flutter_icon_data.dart';
 /// all Icons under Zocial
 ///
 /// http://zocial.smcllns.com/
+@staticIconProvider
 class Zocial {
   Zocial._();
 

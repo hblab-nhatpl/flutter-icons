@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'flutter_icon_data.dart';
 
+@staticIconProvider
 class FlutterIcons {
   FlutterIcons._();
 

@@ -5,6 +5,7 @@ import 'flutter_icon_data.dart';
 /// all Icons under Ant Design
 ///
 /// https://ant.design/
+@staticIconProvider
 class AntDesign {
   AntDesign._();
 

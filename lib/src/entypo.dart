@@ -5,6 +5,7 @@ import 'flutter_icon_data.dart';
 /// all icons under Entypo
 ///
 /// http://entypo.com
+@staticIconProvider
 class Entypo {
   Entypo._();
 

@@ -5,6 +5,7 @@ import 'flutter_icon_data.dart';
 /// all Icons under MaterialCommunityIcons
 ///
 /// https://ionicons.com/
+@staticIconProvider
 class MaterialCommunityIcons {
   MaterialCommunityIcons._();
 

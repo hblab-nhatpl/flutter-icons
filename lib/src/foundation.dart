@@ -5,6 +5,7 @@ import 'flutter_icon_data.dart';
 /// all Icons under Foundation
 ///
 /// http://zurb.com/playground/foundation-icon-fonts-3
+@staticIconProvider
 class Foundation {
   Foundation._();
 

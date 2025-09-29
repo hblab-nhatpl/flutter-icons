@@ -5,6 +5,7 @@ import 'flutter_icon_data.dart';
 /// all Icons under WeatherIcons
 ///
 /// https://erikflowers.github.io/weather-icons/
+@staticIconProvider
 class WeatherIcons {
   WeatherIcons._();
 

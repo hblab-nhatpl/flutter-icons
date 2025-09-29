@@ -5,6 +5,7 @@ import 'flutter_icon_data.dart';
 /// all Icons under EvilIcons
 ///
 /// http://evil-icons.io
+@staticIconProvider
 class EvilIcons {
   EvilIcons._();
 

@@ -5,6 +5,7 @@ import 'flutter_icon_data.dart';
 /// all Icons under Feather
 ///
 /// http://feathericons.com
+@staticIconProvider
 class Feather {
   Feather._();
 

@@ -5,6 +5,7 @@ import 'flutter_icon_data.dart';
 /// all Icons under Ionicons
 ///
 /// https://ionicons.com/
+@staticIconProvider
 class Ionicons {
   Ionicons._();
 

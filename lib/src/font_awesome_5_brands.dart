@@ -5,6 +5,7 @@ import 'flutter_icon_data.dart';
 /// all Icons under FontAwesome5(Brand)
 ///
 /// https://fontawesome.com
+@staticIconProvider
 class FontAwesome5Brands {
   FontAwesome5Brands._();
 

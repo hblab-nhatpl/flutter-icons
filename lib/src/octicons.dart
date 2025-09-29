@@ -5,6 +5,7 @@ import 'flutter_icon_data.dart';
 /// all Icons under Octicons
 ///
 /// http://octicons.github.com
+@staticIconProvider
 class Octicons {
   Octicons._();
 

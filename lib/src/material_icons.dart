@@ -5,6 +5,7 @@ import 'flutter_icon_data.dart';
 /// all Icons under MaterialIcons
 ///
 /// https://www.google.com/design/icons/
+@staticIconProvider
 class MaterialIcons {
   MaterialIcons._();
 
