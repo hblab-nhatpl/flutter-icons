@@ -1,6 +1,6 @@
 {
   "name": "flutter_icons",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "English | [简体中文](./README_zh-CN.md)",
   "main": "index.js",
   "directories": {
@@ -13,15 +13,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/flutter-studio/flutter-icons.git"
+    "url": "git+https://github.com/f10smobileteam/flutter-icons.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/flutter-studio/flutter-icons/issues"
+    "url": "https://github.com/f10smobileteam/flutter-icons/issues"
   },
-  "homepage": "https://github.com/flutter-studio/flutter-icons#readme",
+  "homepage": "https://github.com/f10smobileteam/flutter-icons#readme",
   "devDependencies": {
     "@commitlint/cli": "^7.3.2",
     "@commitlint/config-conventional": "^7.3.1",
