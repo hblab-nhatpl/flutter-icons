@@ -31,6 +31,7 @@ class IconToggle extends StatefulWidget {
   final AnimatedSwitcherTransitionBuilder transitionBuilder;
   final Duration duration;
   final Duration? reverseDuration;
+
   @override
   State<IconToggle> createState() => _IconToggleState();
 
@@ -119,6 +120,7 @@ class _IconToggleable<T> extends AnimatedWidget {
   final Color? activeColor;
   final Color? inactiveColor;
   final Widget? child;
+
   @override
   Widget build(BuildContext context) => CustomPaint(
         painter: _IconPainter(
