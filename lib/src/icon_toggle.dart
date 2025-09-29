@@ -1,5 +1,6 @@
 import 'dart:math' as math;
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 Widget _defaultTransitionBuilder(Widget child, Animation<double> animation) => ScaleTransition(
@@ -32,6 +33,21 @@ class IconToggle extends StatefulWidget {
   final Duration? reverseDuration;
   @override
   State<IconToggle> createState() => _IconToggleState();
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty<IconData>('selectedIconData', selectedIconData))
+      ..add(DiagnosticsProperty<IconData>('unselectedIconData', unselectedIconData))
+      ..add(ColorProperty('activeColor', activeColor))
+      ..add(ColorProperty('inactiveColor', inactiveColor))
+      ..add(DiagnosticsProperty<bool>('value', value))
+      ..add(ObjectFlagProperty<ValueChanged<bool>?>.has('onChanged', onChanged))
+      ..add(ObjectFlagProperty<AnimatedSwitcherTransitionBuilder>.has('transitionBuilder', transitionBuilder))
+      ..add(DiagnosticsProperty<Duration>('duration', duration))
+      ..add(DiagnosticsProperty<Duration?>('reverseDuration', reverseDuration));
+  }
 }
 
 class _IconToggleState extends State<IconToggle> with SingleTickerProviderStateMixin {
@@ -44,8 +60,8 @@ class _IconToggleState extends State<IconToggle> with SingleTickerProviderStateM
     super.initState();
     _controller = AnimationController(vsync: this, duration: const Duration(milliseconds: 100), reverseDuration: const Duration(milliseconds: 50));
     _position = CurvedAnimation(parent: _controller, curve: Curves.linear);
-    _position.addStatusListener((status) {
-      if (status == AnimationStatus.dismissed && widget.onChanged != null && _cancel == false) {
+    _position.addStatusListener((AnimationStatus status) {
+      if (status == AnimationStatus.dismissed && widget.onChanged != null && !_cancel) {
         widget.onChanged!(widget.value);
       }
     });
@@ -58,41 +74,39 @@ class _IconToggleState extends State<IconToggle> with SingleTickerProviderStateM
   }
 
   @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      behavior: HitTestBehavior.opaque,
-      onTapDown: (event) {
-        _cancel = false;
-        _controller.forward();
-      },
-      onTapUp: (event) {
-        _controller.reverse();
-      },
-      onTapCancel: () {
-        _cancel = true;
-        _controller.reverse();
-      },
-      child: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: _IconToggleable<double>(
-          listenable: _position,
-          activeColor: widget.activeColor,
-          inactiveColor: widget.inactiveColor,
-          child: AnimatedSwitcher(
-            duration: widget.duration,
-            reverseDuration: widget.reverseDuration,
-            transitionBuilder: widget.transitionBuilder,
-            child: Icon(
-              widget.value ? widget.selectedIconData : widget.unselectedIconData,
-              color: widget.value ? widget.activeColor : widget.inactiveColor,
-              size: 22,
-              key: ValueKey<bool>(widget.value),
+  Widget build(BuildContext context) => GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        onTapDown: (TapDownDetails event) async {
+          _cancel = false;
+          await _controller.forward();
+        },
+        onTapUp: (TapUpDetails event) async {
+          await _controller.reverse();
+        },
+        onTapCancel: () async {
+          _cancel = true;
+          await _controller.reverse();
+        },
+        child: Padding(
+          padding: const EdgeInsets.all(10),
+          child: _IconToggleable<double>(
+            listenable: _position,
+            activeColor: widget.activeColor,
+            inactiveColor: widget.inactiveColor,
+            child: AnimatedSwitcher(
+              duration: widget.duration,
+              reverseDuration: widget.reverseDuration,
+              transitionBuilder: widget.transitionBuilder,
+              child: Icon(
+                widget.value ? widget.selectedIconData : widget.unselectedIconData,
+                color: widget.value ? widget.activeColor : widget.inactiveColor,
+                size: 22,
+                key: ValueKey<bool>(widget.value),
+              ),
             ),
           ),
         ),
-      ),
-    );
-  }
+      );
 }
 
 class _IconToggleable<T> extends AnimatedWidget {
@@ -106,15 +120,21 @@ class _IconToggleable<T> extends AnimatedWidget {
   final Color? inactiveColor;
   final Widget? child;
   @override
-  Widget build(BuildContext context) {
-    return CustomPaint(
-      painter: _IconPainter(
-        position: listenable as Animation<double>,
-        activeColor: activeColor,
-        inactiveColor: inactiveColor,
-      ),
-      child: child,
-    );
+  Widget build(BuildContext context) => CustomPaint(
+        painter: _IconPainter(
+          position: listenable as Animation<double>,
+          activeColor: activeColor,
+          inactiveColor: inactiveColor,
+        ),
+        child: child,
+      );
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(ColorProperty('activeColor', activeColor))
+      ..add(ColorProperty('inactiveColor', inactiveColor));
   }
 }
 

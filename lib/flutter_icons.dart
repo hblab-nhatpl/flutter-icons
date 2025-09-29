@@ -1,5 +1,3 @@
-library flutter_icons;
-
 export 'src/ant_design.dart';
 export 'src/entypo.dart';
 export 'src/evil_icons.dart';
