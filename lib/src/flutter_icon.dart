@@ -33,7 +33,7 @@ class FlutterIcon extends FaIcon {
     super.applyTextScaling,
     super.blendMode,
     super.fontWeight,
-  })  : assert(fill == null || (0.0 <= fill && fill <= 1.0)),
-        assert(weight == null || (0.0 < weight)),
-        assert(opticalSize == null || (0.0 < opticalSize));
+  })  : assert(fill == null || (0.0 <= fill && fill <= 1.0), 'fill must be null or between 0.0 and 1.0 (inclusive)'),
+        assert(weight == null || (0.0 < weight), 'weight must be null or greater than 0.0'),
+        assert(opticalSize == null || (0.0 < opticalSize), 'opticalSize must be null or greater than 0.0');
 }
