@@ -7,6 +7,7 @@ export 'src/font_awesome.dart';
 export 'src/font_awesome_5.dart';
 export 'src/font_awesome_5_brands.dart';
 export 'src/font_awesome_5_solid.dart';
+export 'src/font_awesome_7.dart';
 export 'src/foundation.dart';
 export 'src/icon_toggle.dart';
 export 'src/ionicons.dart';
