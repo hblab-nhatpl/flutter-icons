@@ -60,6 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
         body: const Padding(
           padding: EdgeInsets.all(20),
           child: Column(
+            spacing: 5,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Icon(AntDesign.stepforward),
