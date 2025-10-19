@@ -1,3 +1,7 @@
+## 1.3.1
+
+* Update Dependencies & Readme File
+
 ## 1.3.0
 
 * Updated to New Dart Formating, Added New Font Awesome 7 Icons &

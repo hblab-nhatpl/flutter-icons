@@ -24,6 +24,7 @@ Originally Forked from https://github.com/flutter-studio/flutter-icons.git
 * [`Feather`](http://feathericons.com) by Cole Bemis & Contributors (v4.7.0, **266** icons)
 * [`FontAwesome`](http://fortawesome.github.io/Font-Awesome/icons/) by Dave Gandy (v4.7.0, **675** icons)
 * [`FontAwesome 5`](https://fontawesome.com) by Fonticons, Inc. (v5.7.0, **1500** (free))
+* [`FontAwesome 7`](https://fontawesome.com/icons) by Flutter Community (v7.0.1, **2000** (free))
 * [`Foundation`](http://zurb.com/playground/foundation-icon-fonts-3) by ZURB, Inc. (v3.0, **283** icons)
 * [`Ionicons`](https://ionicons.com/) by Ben Sperry (v4.2.4, **696** icons)
 * [`MaterialIcons`](https://www.google.com/design/icons/) by Google, Inc. (v3.0.1, **932** icons)
