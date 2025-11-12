@@ -1,8 +1,6 @@
-English | [简体中文](./README_zh-CN.md)
-
 # flutter_icons
 
-[![pub package](https://img.shields.io/pub/v/flutter_icons.svg)](https://pub.dartlang.org/packages/flutter_icons)
+[![Static Badge](https://img.shields.io/badge/GitHub-v1.3.2-blue)](https://github.com/f10smobileteam/flutter-icons.git)
 
 Customizable Icons for Flutter,Inspired by [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons)
 
@@ -38,7 +36,16 @@ Originally Forked from https://github.com/flutter-studio/flutter-icons.git
 
 To use this plugin, add `flutter_icons` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
 
-## Widget
+    flutter_icons:
+        git:
+            url: https://github.com/f10smobileteam/flutter-icons.git
+            ref: 1.3.2
+
+## Widgets
+
+### FlutterIcon
+
+* Widget for Icons that are not Traditional Shaped Icons
 
 ### IconToggle
 
@@ -92,64 +99,6 @@ Icon(FontAwesome5Brands.$500px)
 Icon(FlutterIcons.stepforward_ant)
 Icon(FlutterIcons.html5_faw)
 ...
-
-// Previous versions of 1.0.0 are used
-Icon(Ionicons.getIconData("ios-search"));
-Icon(AntDesign.getIconData("stepforward"));
-Icon(FontAwesome.getIconData("glass"));
-Icon(MaterialIcons.getIconData("ac-unit"));
-Icon(FontAwesome5.getIconData("address-book"));
-Icon(FontAwesome5.getIconData("address-book",weight: IconWeight.Solid));
-Icon(FontAwesome5.getIconData("500px", weight: IconWeight.Brand));
 ```
 
-### How to keep only the fonts used in the project.
-
-#### step 1
-
-Execute the command
-
-```
-pub global activate split_icon
-```
-
-#### step2
-
-Add the font you want to leave in the project's pubspec file
-
-```dart
-//Ant Design Icons -> ant,
-//Entypo Icons -> ent,
-//Evil Icons -> evi,
-//Feather Icons -> fea,
-//Font Awesome Icons -> faw,
-//Font Awesome 5 Regular -> faw5
-//Font Awesome 5 Solid -> faw5s
-//Font Awesome 5 Brands -> faw5b
-//Foundation Icons -> fou,
-//Ionicons Icons -> ion,
-//Material Community Icons -> mco,
-//Material Icons -> mdi,
-//Octicons Icons -> oct,
-//Simple Line Icons -> sli,
-//Zocial Icons -> zoc,
-//Weather Icons -> wea
-
-```
-
-flutter_icons:
-includes:
--ant
--mco
-...
-
- ```
-    
-#### step3
-Execute the command in the project directory
-``` 
-
-split_icon
-
-```
-
+####

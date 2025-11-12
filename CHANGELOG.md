@@ -1,3 +1,7 @@
+## 1.3.2
+
+* Update Dependencies, Android Gradle Plugin & Readme File
+
 ## 1.3.1
 
 * Update Dependencies & Readme File
