@@ -142,7 +142,7 @@ class _IconToggleable<T> extends AnimatedWidget {
 
 class _IconPainter extends CustomPainter {
   _IconPainter({
-    @required this.position,
+    required this.position,
     this.activeColor,
     this.inactiveColor,
   });
