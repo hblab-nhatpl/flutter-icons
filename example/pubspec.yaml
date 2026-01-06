@@ -1,6 +1,8 @@
 name: example
 description: A new Flutter application.
 
+publish_to: 'none'
+
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
 # followed by an optional build number separated by a +.
@@ -10,7 +12,7 @@ description: A new Flutter application.
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.17.0 <4.0.0"
 
 dependencies:
   flutter:
@@ -18,20 +20,19 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^0.1.2
+  cupertino_icons: ^1.0.8
   flutter_icons:
-#    path: ../
-     git:
-       url: https://github.com/flutter-studio/flutter-icons.git
-       ref: 1.1.0
+    path: ../
+#     git:
+#       url: https://github.com/f10smobileteam/flutter-icons.git
+#       ref: 1.3.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  # split_icon: ^0.2.0  
 
-flutter_icons:
-  includes:
-    - ant
+  flutter_lints: ^6.0.0
+
 # For information on the generic Dart part of this file, see the
 # following page: https://www.dartlang.org/tools/pub/pubspec
 

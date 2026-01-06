@@ -1,6 +1,5 @@
-import 'dart:async';
 import 'dart:io';
-import 'file:///Users/makisu/flutter-icons/test/a.dart';
+
 //void main() async {
 //  File file = File("././lib/src/a.dart");
 //  if (!file.existsSync())
@@ -43,13 +42,11 @@ import 'file:///Users/makisu/flutter-icons/test/a.dart';
 //  file.writeAsStringSync(allStr);
 //}
 
-String toCamelName(String name)=>name.split("_").map((e)=>"${e.substring(0,1).toUpperCase()}${
-    e.substring(1)
-}").toList().join("");
+String toCamelName(String name) => name.split("_").map((String e) => "${e.substring(0, 1).toUpperCase()}${e.substring(1)}").toList().join();
 
-String toName(String name){
-  String _name = toCamelName(name);
-  return "${_name.substring(0,1).toLowerCase()}${_name.substring(1)}";
+String toName(String name) {
+  String name0 = toCamelName(name);
+  return "${name0.substring(0, 1).toLowerCase()}${name0.substring(1)}";
 }
 
 //void main(){
@@ -72,29 +69,31 @@ String toName(String name){
 //  }
 //}
 
-void main(){
-  Map<String,dynamic> _gly = _fontAwesome5_meta;
-  List<String> keys = _gly.keys.toList();
-  for(int i=0;i<keys.length;i++){
+void main() {
+  Map<String, dynamic> gly = _fontAwesome5_meta;
+  List<String> keys = gly.keys.toList();
+  for (int i = 0; i < keys.length; i++) {
     File file = File("././lib/font_awesome_5_${keys[i]}.dart");
-    if(!file.existsSync())file.createSync();
+    if (!file.existsSync()) {
+      file.createSync();
+    }
     String allStr = """
     import 'package:flutter/material.dart';
     import 'flutter_icon_data.dart';""";
     allStr += "class ${toCamelName("font_awesome_5_${keys[i]}")} { \n";
-    List<String> obj = _gly[keys[i]];
-    for(int j=0;j<obj.length;j++){
-      allStr += "static const IconData ${obj[j].replaceAll("-", "_")} = const FlutterIconData.${toName("font_awesome_5_${keys[i]}")}(${_fontAwesome5[obj[j]]});\n";
+    List<String> obj = gly[keys[i]];
+    StringBuffer allStrBuffer = StringBuffer();
+    for (int j = 0; j < obj.length; j++) {
+      allStrBuffer.write("static const IconData ${obj[j].replaceAll("-", "_")} = const FlutterIconData.${toName("font_awesome_5_${keys[i]}")}(${_fontAwesome5[obj[j]]});\n");
     }
+    allStr += allStrBuffer.toString();
     allStr += "}";
     file.writeAsStringSync(allStr);
   }
 }
 
-
-
-const Map<String, List<String>> _fontAwesome5_meta = {
-  "brands": [
+const Map<String, List<String>> _fontAwesome5_meta = <String, List<String>>{
+  "brands": <String>[
     "500px",
     "accessible-icon",
     "accusoft",
@@ -509,9 +508,9 @@ const Map<String, List<String>> _fontAwesome5_meta = {
     "yoast",
     "youtube-square",
     "youtube",
-    "zhihu"
+    "zhihu",
   ],
-  "regular": [
+  "regular": <String>[
     "address-book",
     "address-card",
     "angry",
@@ -663,9 +662,9 @@ const Map<String, List<String>> _fontAwesome5_meta = {
     "window-close",
     "window-maximize",
     "window-minimize",
-    "window-restore"
+    "window-restore",
   ],
-  "solid": [
+  "solid": <String>[
     "ad",
     "address-book",
     "address-card",
@@ -1601,11 +1600,11 @@ const Map<String, List<String>> _fontAwesome5_meta = {
     "wrench",
     "x-ray",
     "yen-sign",
-    "yin-yang"
-  ]
+    "yin-yang",
+  ],
 };
 
-const Map<String, int> _fontAwesome5 = {
+const Map<String, int> _fontAwesome5 = <String, int>{
   "500px": 62062,
   "accessible-icon": 62312,
   "accusoft": 62313,
@@ -2955,7 +2954,5 @@ const Map<String, int> _fontAwesome5 = {
   "yoast": 62129,
   "youtube": 61799,
   "youtube-square": 62513,
-  "zhihu": 63039
+  "zhihu": 63039,
 };
-
-
